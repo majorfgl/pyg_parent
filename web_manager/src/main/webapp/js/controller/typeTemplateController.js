@@ -10,7 +10,7 @@ app.controller('typeTemplateController' ,function($scope,$controller,brandServic
 				$scope.list=response;
 			}			
 		);
-	}    
+	};
 	
 	//分页
 	$scope.findPage=function(page,rows){			
@@ -20,7 +20,7 @@ app.controller('typeTemplateController' ,function($scope,$controller,brandServic
 				$scope.paginationConf.totalItems=response.total;//更新总记录数
 			}			
 		);
-	}
+	};
 	
 	//查询实体 
 	$scope.findOne=function(id){				
@@ -35,7 +35,7 @@ app.controller('typeTemplateController' ,function($scope,$controller,brandServic
 				$scope.entity.customAttributeItems = JSON.parse($scope.entity.customAttributeItems);
 			}
 		);				
-	}
+	};
 	
 	//保存 
 	$scope.save=function(){				
