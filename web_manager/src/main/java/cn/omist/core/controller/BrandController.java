@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Mr_Fan
@@ -29,6 +30,7 @@ public class BrandController {
 
     /**
      * 分页查询品牌 支持模糊查询
+     *
      * @param page
      * @param rows
      * @return
@@ -57,11 +59,12 @@ public class BrandController {
 
     /**
      * 修改
+     *
      * @param brand
      * @return
      */
     @RequestMapping("/update")
-    public Result update(@RequestBody Brand brand){
+    public Result update(@RequestBody Brand brand) {
         try {
             brandService.update(brand);
             return new Result(true, "修改成功");
@@ -73,11 +76,12 @@ public class BrandController {
 
     /**
      * 批量删除
+     *
      * @param ids
      * @return
      */
     @RequestMapping("/delete")
-    public Result delete(Long [] ids){
+    public Result delete(Long[] ids) {
         try {
             brandService.delete(ids);
             return new Result(true, "删除成功");
@@ -87,5 +91,15 @@ public class BrandController {
         }
     }
 
+    /**
+     * 查询规格选项
+     *
+     * @return 规格选项列表
+     */
+    @RequestMapping("/selectOptionList")
+    public List<Map> selectOptionList() {
+
+        return null;
+    }
 
 }
