@@ -99,6 +99,7 @@ public class BrandController {
     @RequestMapping("/selectOptionList")
     public List<Map> selectOptionList() {
 
+        //查找brand列表
         return null;
     }
 
