@@ -3,6 +3,8 @@ package cn.omist.core.dao.specification;
 import cn.omist.core.pojo.specification.Specification;
 import cn.omist.core.pojo.specification.SpecificationQuery;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface SpecificationDao {
@@ -27,4 +29,7 @@ public interface SpecificationDao {
     int updateByPrimaryKeySelective(Specification record);
 
     int updateByPrimaryKey(Specification record);
+
+    List<Map> selectOptionList();
+
 }

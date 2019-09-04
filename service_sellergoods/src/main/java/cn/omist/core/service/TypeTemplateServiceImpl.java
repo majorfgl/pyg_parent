@@ -31,4 +31,26 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
         Page<TypeTemplate> templatePage = (Page<TypeTemplate>) typeTemplateDao.selectByExample(typeTemplateQuery);
         return new PageResult(templatePage.getTotal(), templatePage.getResult());
     }
+
+    @Override
+    public TypeTemplate findOne(Long id) {
+        return typeTemplateDao.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public void insert(TypeTemplate template) {
+        typeTemplateDao.insertSelective(template);
+    }
+
+    @Override
+    public void update(TypeTemplate template) {
+        typeTemplateDao.updateByPrimaryKeySelective(template);
+    }
+
+    @Override
+    public void delete(Long[] ids) {
+        for (Long id : ids) {
+            typeTemplateDao.deleteByPrimaryKey(id);
+        }
+    }
 }

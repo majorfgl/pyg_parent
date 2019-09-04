@@ -4,6 +4,7 @@ import cn.omist.core.pojo.entity.PageResult;
 import cn.omist.core.pojo.good.Brand;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Mr_Fan
@@ -16,43 +17,52 @@ public interface BrandService {
      *
      * @return 返回所有品牌
      */
-    public List<Brand> findAll();
+    List<Brand> findAll();
 
     /**
      * 分页查询返回品牌
+     *
      * @param brand 查询条件
-     * @param page 页码
-     * @param rows 每页数量
-     * @return pageresult
+     * @param page  页码
+     * @param rows  每页数量
+     * @return pageResult
      */
-    PageResult findPage(Brand brand,Integer page, Integer rows);
+    PageResult findPage(Brand brand, Integer page, Integer rows);
 
     /**
      * 保存品牌
      *
-     * @param brand
+     * @param brand 查询条件
      */
     void add(Brand brand);
 
     /**
      * 通过id查询品牌id
      *
-     * @param id
-     * @return
+     * @param id id
+     * @return 品牌
      */
     Brand findOne(Long id);
 
     /**
      * 修改品牌id
      *
-     * @param brand
+     * @param brand 更新值
      */
     void update(Brand brand);
 
     /**
      * 通过id删除品牌
-     * @param ids
+     *
+     * @param ids ids
      */
     void delete(Long[] ids);
+
+    /**
+     * 查询所有品牌作为前台页面选项
+     *
+     * @return 所有品牌的list
+     */
+    List<Map> selectOptionList();
 
 }

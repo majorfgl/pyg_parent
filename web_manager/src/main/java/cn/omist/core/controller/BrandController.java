@@ -92,15 +92,14 @@ public class BrandController {
     }
 
     /**
-     * 查询规格选项
+     * 查询所有品牌
      *
-     * @return 规格选项列表
+     * @return 品牌list
      */
     @RequestMapping("/selectOptionList")
     public List<Map> selectOptionList() {
-
-        //查找brand列表
-        return null;
+        List<Map> brandList = brandService.selectOptionList();
+        return brandList;
     }
 
 }

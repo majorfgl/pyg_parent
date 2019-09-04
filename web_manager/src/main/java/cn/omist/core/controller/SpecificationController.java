@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author Mr_Fan
  * @Date 2019/9/2 16:17
@@ -89,5 +92,15 @@ public class SpecificationController {
             e.printStackTrace();
             return new Result(false, "删除失败");
         }
+    }
+
+    /**
+     * 查询规格选项
+     *
+     * @return 规格选项列表
+     */
+    @RequestMapping("/selectOptionList")
+    public List<Map> selectOptionList() {
+        return specificationService.selectOptionList();
     }
 }

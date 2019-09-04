@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Mr_Fan
@@ -64,5 +65,10 @@ public class BrandServiceImpl implements BrandService {
         for (Long id : ids) {
             brandDao.deleteByPrimaryKey(id);
         }
+    }
+
+    @Override
+    public List<Map> selectOptionList() {
+        return brandDao.selectOptionList();
     }
 }
